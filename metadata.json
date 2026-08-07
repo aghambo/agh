@@ -1,0 +1,6 @@
+{
+  "name": "Ambo General Hospital",
+  "description": "Official landing website for Ambo General Hospital built in collaboration with IB Tech and STEM Center intervention. Features multi-lingual support, glassmorphism design, and comprehensive healthcare services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
