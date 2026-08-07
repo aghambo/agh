@@ -96,8 +96,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentLang, onLanguageChange, a
       <nav
         className={`w-full transition-all duration-300 ${
           isScrolled
-            ? 'glass-panel shadow-lg py-2.5 border-b border-slate-200/80'
-            : 'bg-white/80 backdrop-blur-md py-3.5 border-b border-slate-100'
+            ? 'bg-white/95 backdrop-blur-xl shadow-lg py-2.5 border-b border-slate-200/90'
+            : 'bg-white/90 backdrop-blur-md py-3.5 border-b border-slate-100'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">

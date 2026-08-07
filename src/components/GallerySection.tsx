@@ -4,6 +4,7 @@ import { Language, GalleryItem } from '../types';
 import { translations } from '../translations/i18n';
 import { galleryData } from '../data/hospitalData';
 import { EthiopicPattern } from './EthiopicPattern';
+import { handleImgError } from '../assets/images';
 
 interface GalleryProps {
   currentLang: Language;
@@ -93,7 +94,7 @@ export const GallerySection: React.FC<GalleryProps> = ({ currentLang }) => {
               <img
                 src={item.url}
                 alt={t(item.titleKey)}
-                referrerPolicy="no-referrer"
+                onError={(e) => handleImgError(e, 'main')}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B2545]/90 via-[#0B2545]/20 to-transparent opacity-80 group-hover:opacity-95 transition-opacity" />
@@ -143,7 +144,7 @@ export const GallerySection: React.FC<GalleryProps> = ({ currentLang }) => {
               <img
                 src={filteredItems[lightboxIndex].url}
                 alt={t(filteredItems[lightboxIndex].titleKey)}
-                referrerPolicy="no-referrer"
+                onError={(e) => handleImgError(e, 'main')}
                 className="max-h-[70vh] w-auto object-contain"
               />
             </div>

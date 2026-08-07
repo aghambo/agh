@@ -1,4 +1,5 @@
 import { ServiceItem, NewsArticle, AchievementItem, GalleryItem, Testimonial, TriageOption, FAQItem } from '../types';
+import { localImages } from '../assets/images';
 
 export const servicesData: ServiceItem[] = [
   {
@@ -6,7 +7,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.emergency.title',
     category: 'emergency',
     icon: 'Ambulance',
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     capacity: '24 Beds / 4 Trauma Bays',
     availability: '24/7 Round-the-Clock',
     shortDescKey: 'srv.emergency.desc',
@@ -20,7 +21,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.outpatient.title',
     category: 'general',
     icon: 'Users',
-    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     capacity: '800+ Consultations / Day',
     availability: 'Mon - Sun: 8:00 AM - 6:00 PM',
     shortDescKey: 'srv.outpatient.desc',
@@ -34,7 +35,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.inpatient.title',
     category: 'general',
     icon: 'BedDouble',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalBuilding,
     capacity: '350 Inpatient Beds & 12 ICU Beds',
     availability: '24/7 Care & Specialist Rounds',
     shortDescKey: 'srv.inpatient.desc',
@@ -48,7 +49,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.surgery.title',
     category: 'surgical',
     icon: 'Scissors',
-    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalBuilding,
     capacity: '5 Modern Major Surgical Suites',
     availability: 'Scheduled & 24/7 Emergency',
     shortDescKey: 'srv.surgery.desc',
@@ -62,7 +63,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.pediatrics.title',
     category: 'maternal',
     icon: 'Baby',
-    image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     capacity: '40 Pediatric Beds & 15 NICU Incubators',
     availability: '24/7 Pediatric Care',
     shortDescKey: 'srv.pediatrics.desc',
@@ -76,7 +77,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.obgyn.title',
     category: 'maternal',
     icon: 'HeartHandshake',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalBuilding,
     capacity: '3 Maternity Delivery Suites & C-Section Theater',
     availability: '24/7 Maternal Unit',
     shortDescKey: 'srv.obgyn.desc',
@@ -90,7 +91,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.orthopedics.title',
     category: 'surgical',
     icon: 'Bone',
-    image: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalBuilding,
     capacity: '20 Orthopedic Beds',
     availability: 'Mon - Sat: 8:30 AM - 5:00 PM (Emergency 24/7)',
     shortDescKey: 'srv.orthopedics.desc',
@@ -104,7 +105,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.radiology.title',
     category: 'diagnostics',
     icon: 'Activity',
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalBuilding,
     capacity: 'Full Imaging Suite',
     availability: '24/7 Emergency & Routine',
     shortDescKey: 'srv.radiology.desc',
@@ -118,7 +119,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.laboratory.title',
     category: 'diagnostics',
     icon: 'FlaskConical',
-    image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80',
+    image: localImages.ibTechStem,
     capacity: '500+ Tests processed / Hour',
     availability: '24/7 Continuous Operation',
     shortDescKey: 'srv.laboratory.desc',
@@ -132,7 +133,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.dental.title',
     category: 'specialized',
     icon: 'Smile',
-    image: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     capacity: '3 Dental Operatory Chairs',
     availability: 'Mon - Fri: 8:00 AM - 5:00 PM',
     shortDescKey: 'srv.dental.desc',
@@ -146,7 +147,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.eyecare.title',
     category: 'specialized',
     icon: 'Eye',
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     capacity: 'Eye Clinic & Optical Shop',
     availability: 'Mon - Sat: 8:30 AM - 4:30 PM',
     shortDescKey: 'srv.eyecare.desc',
@@ -160,7 +161,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.mental.title',
     category: 'specialized',
     icon: 'Brain',
-    image: 'https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     capacity: 'Outpatient & Counseling Suites',
     availability: 'Mon - Fri: 8:00 AM - 5:00 PM',
     shortDescKey: 'srv.mental.desc',
@@ -174,7 +175,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.cardiology.title',
     category: 'specialized',
     icon: 'HeartPulse',
-    image: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalBuilding,
     capacity: 'Cardiac Diagnostic Lab',
     availability: 'Mon - Sat: 8:00 AM - 5:00 PM',
     shortDescKey: 'srv.cardiology.desc',
@@ -188,7 +189,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.vaccination.title',
     category: 'general',
     icon: 'Syringe',
-    image: 'https://images.unsplash.com/photo-1618961734760-466979ce35b0?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     capacity: 'Public Immunization Center',
     availability: 'Mon - Sat: 8:00 AM - 4:00 PM',
     shortDescKey: 'srv.vaccination.desc',
@@ -202,7 +203,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.pharmacy.title',
     category: 'general',
     icon: 'Pill',
-    image: 'https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     capacity: '3 Dispensing Counters',
     availability: '24/7 Continuous Service',
     shortDescKey: 'srv.pharmacy.desc',
@@ -216,7 +217,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.physio.title',
     category: 'specialized',
     icon: 'Dumbbell',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     capacity: 'Physiotherapy & Gym Unit',
     availability: 'Mon - Fri: 8:00 AM - 5:00 PM',
     shortDescKey: 'srv.physio.desc',
@@ -230,7 +231,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.telemedicine.title',
     category: 'specialized',
     icon: 'Video',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    image: localImages.ibTechStem,
     capacity: 'Digital Portal Consultation',
     availability: 'Mon - Sun: 8:00 AM - 8:00 PM',
     shortDescKey: 'srv.telemedicine.desc',
@@ -244,7 +245,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.ambulance.title',
     category: 'emergency',
     icon: 'Truck',
-    image: 'https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     capacity: '4 Advanced Life Support Ambulances',
     availability: '24/7 Mobile Response',
     shortDescKey: 'srv.ambulance.desc',
@@ -258,7 +259,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.healthedu.title',
     category: 'general',
     icon: 'GraduationCap',
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     capacity: 'Community Outreach Unit',
     availability: 'Ongoing Field Campaigns',
     shortDescKey: 'srv.healthedu.desc',
@@ -272,7 +273,7 @@ export const servicesData: ServiceItem[] = [
     titleKey: 'srv.stemcenter.title',
     category: 'specialized',
     icon: 'Laptop',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+    image: localImages.ibTechStem,
     capacity: '30 Computer Workstations & Lab',
     availability: 'Mon - Sat: 8:00 AM - 6:00 PM',
     shortDescKey: 'srv.stemcenter.desc',
@@ -290,7 +291,7 @@ export const newsArticles: NewsArticle[] = [
     categoryKey: 'STEM & Tech',
     date: 'August 2, 2026',
     authorKey: 'IB Tech & Hospital Admin',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+    image: localImages.ibTechStem,
     summaryKey: 'Over 150 healthcare professionals at Ambo General Hospital have successfully graduated from the intensive digital health training program conducted by IB Tech startup through STEM Center intervention.',
     contentKey: 'In a landmark milestone for public healthcare in Oromia, Ambo General Hospital has officially launched its digital health readiness initiative. Developed by IB Tech startup with support from STEM Center intervention, the program provided comprehensive training in Electronic Medical Records (EMR), automated patient triage, queue management, and telemedicine workflow. The initiative empowers doctors, nurses, and laboratory technicians to deliver faster, error-free clinical care to over 2,500 daily visitors.',
     readTime: '4 min read',
@@ -302,7 +303,7 @@ export const newsArticles: NewsArticle[] = [
     categoryKey: 'Hospital News',
     date: 'July 18, 2026',
     authorKey: 'Department of Radiology',
-    image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalBuilding,
     summaryKey: 'Ambo General Hospital inaugurates a state-of-the-art 64-slice CT Scanner, eliminating the need for patients in West Shewa to travel to Addis Ababa for advanced neuro and vascular imaging.',
     contentKey: 'The installation of our new 64-slice CT Scanner marks a monumental leap forward for regional diagnostic healthcare. Capable of capturing high-resolution 3D images of brain trauma, chest pathologies, and complex bone fractures in seconds, this facility will save critical time during emergency trauma care. Hospital Director Dr. Tokuma Bayisa praised the Ministry of Health and local partners for making this project a reality.',
     readTime: '3 min read',
@@ -314,7 +315,7 @@ export const newsArticles: NewsArticle[] = [
     categoryKey: 'Health Tips',
     date: 'June 25, 2026',
     authorKey: 'Maternal Care Unit',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    image: localImages.amboHospitalMain,
     summaryKey: 'Our Obstetrics and Public Health teams conducted a week-long outreach offering free ultrasound scans, prenatal checkups, and nutritional counseling.',
     contentKey: 'To combat maternal mortality and promote safe childbirth practices, Ambo General Hospital dispatched mobile clinical teams to 12 rural kebeles across West Shewa. Over 1,200 expectant mothers received free ultrasound screening, iron supplementation, tetanus immunization, and direct scheduling for safe hospital delivery.',
     readTime: '5 min read',
@@ -326,7 +327,7 @@ export const newsArticles: NewsArticle[] = [
     categoryKey: 'STEM & Tech',
     date: 'May 14, 2026',
     authorKey: 'IB Tech Team',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+    image: localImages.ibTechStem,
     summaryKey: 'University students and young innovators built prototype digital health solutions for patient queue tracking and local pharmacy inventory management.',
     contentKey: 'Highlighting the transformative impact of the STEM Center intervention, IB Tech organized a 48-hour youth hackathon at Ambo General Hospital. Student teams collaborated with hospital technicians to build real-world software prototypes, showcasing the immense potential of Ethiopian youth in advancing healthcare innovation.',
     readTime: '4 min read',
@@ -341,7 +342,7 @@ export const achievementsData: AchievementItem[] = [
     titleKey: 'Complete Digital Transformation & IB Tech STEM Integration',
     descKey: 'Successfully digitized patient records, launched staff training, and established the STEM Digital Health Innovation Center in collaboration with IB Tech startup.',
     category: 'stem',
-    image: '/images/ib_tech_stem.jpg'
+    image: localImages.ibTechStem
   },
   {
     id: '2',
@@ -349,7 +350,7 @@ export const achievementsData: AchievementItem[] = [
     titleKey: 'Inauguration of New 4-Story Surgical & Inpatient Block',
     descKey: 'Expanded hospital bed capacity to 350+ beds with 5 major operating suites and a dedicated 12-bed ICU unit.',
     category: 'infrastructure',
-    image: '/images/ambo_general_hospital_building.jpg'
+    image: localImages.amboHospitalBuilding
   },
   {
     id: '3',
@@ -357,7 +358,7 @@ export const achievementsData: AchievementItem[] = [
     titleKey: 'Regional Healthcare Quality Excellence Award',
     descKey: 'Recognized by Oromia Health Bureau for outstanding emergency trauma response, low maternal mortality rates, and patient safety protocols.',
     category: 'award',
-    image: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80'
+    image: localImages.amboHospitalMain
   },
   {
     id: '4',
@@ -365,7 +366,7 @@ export const achievementsData: AchievementItem[] = [
     titleKey: 'Establishment of Neonatal ICU (NICU) & Infant Care Center',
     descKey: 'Saved hundreds of premature infants by introducing modern incubators, phototherapy, and specialized neonatal nursing.',
     category: 'infrastructure',
-    image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80'
+    image: localImages.amboHospitalBuilding
   },
   {
     id: '5',
@@ -373,7 +374,7 @@ export const achievementsData: AchievementItem[] = [
     titleKey: 'Community Public Health Campaign Expansion',
     descKey: 'Reached over 500,000 citizens in West Shewa with free vaccination drives, maternal education, and epidemic prevention programs.',
     category: 'community',
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80'
+    image: localImages.amboHospitalMain
   }
 ];
 
@@ -383,7 +384,7 @@ export const galleryData: GalleryItem[] = [
     titleKey: 'Ambo General Hospital Main Courtyard',
     category: 'campus',
     type: 'image',
-    url: '/images/ambo_general_hospital.jpg',
+    url: localImages.amboHospitalMain,
     captionKey: 'Our spacious white hospital campus surrounded by greenery, pathways, and outdoor lamps in Ambo Town.'
   },
   {
@@ -391,7 +392,7 @@ export const galleryData: GalleryItem[] = [
     titleKey: 'Modern Building Extension',
     category: 'campus',
     type: 'image',
-    url: '/images/ambo_general_hospital_building.jpg',
+    url: localImages.amboHospitalBuilding,
     captionKey: 'Newly constructed multi-story surgical and inpatient building extension with blue roofing.'
   },
   {
@@ -399,7 +400,7 @@ export const galleryData: GalleryItem[] = [
     titleKey: 'STEM & IB Tech Capacity Building Workshop',
     category: 'stem',
     type: 'image',
-    url: '/images/ib_tech_stem.jpg',
+    url: localImages.ibTechStem,
     captionKey: 'Hospital staff undergoing hands-on digital records and software training at the STEM center.'
   },
   {
@@ -407,7 +408,7 @@ export const galleryData: GalleryItem[] = [
     titleKey: 'Hospital Executive Leadership',
     category: 'campus',
     type: 'image',
-    url: '/images/director_of_ambo_general_hospital.jpg',
+    url: localImages.directorTokumaBayisa,
     captionKey: 'Medical Director Dr. Tokuma Bayisa providing strategic guidance to hospital operations.'
   },
   {
@@ -415,7 +416,7 @@ export const galleryData: GalleryItem[] = [
     titleKey: 'State-of-the-Art Surgical Suite',
     category: 'facilities',
     type: 'image',
-    url: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80',
+    url: localImages.amboHospitalBuilding,
     captionKey: 'Sterile operating theater equipped with modern anesthesia and surgical monitors.'
   },
   {
@@ -423,7 +424,7 @@ export const galleryData: GalleryItem[] = [
     titleKey: '24/7 Clinical Laboratory Unit',
     category: 'facilities',
     type: 'image',
-    url: 'https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1200&q=80',
+    url: localImages.ibTechStem,
     captionKey: 'Automated analyzers delivering accurate chemistry and hematology test results.'
   }
 ];
@@ -434,7 +435,7 @@ export const testimonialsData: Testimonial[] = [
     name: 'Ato Abebe Tadesse',
     locationKey: 'Ambo Town',
     roleKey: 'Patient Family Member',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80',
+    avatar: '',
     quoteKey: 'When my brother suffered a severe trauma, the emergency team at Ambo General Hospital acted within seconds. The surgeons saved his life, and the nursing staff cared for him like family.',
     rating: 5
   },
@@ -443,7 +444,7 @@ export const testimonialsData: Testimonial[] = [
     name: 'W/ro Chaltu Gemeda',
     locationKey: 'Guder Town',
     roleKey: 'Maternal Care Patient',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80',
+    avatar: '',
     quoteKey: 'I delivered my baby girl at Ambo General Hospital. The maternity ward was exceptionally clean, the midwives were kind and patient, and the modern equipment gave me complete peace of mind.',
     rating: 5
   },
@@ -452,7 +453,7 @@ export const testimonialsData: Testimonial[] = [
     name: 'Ato Worku Dires',
     locationKey: 'Ginchi Town',
     roleKey: 'Outpatient Visitor',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80',
+    avatar: '',
     quoteKey: 'The new digital registration system introduced by IB Tech has reduced waiting times dramatically. I got my lab test results on the same day without any hassle.',
     rating: 5
   }

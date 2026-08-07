@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ShieldCheck, HeartPulse, ArrowRight, PhoneCall, Sparkles, ExternalLink, Play, Pause, Award, Activity, Users } from 'lucide-react';
+import { ShieldCheck, HeartPulse, ArrowRight, PhoneCall, Sparkles, ExternalLink, Play, Pause, Award, Activity, Users, Eye, EyeOff } from 'lucide-react';
 import { Language } from '../types';
 import { translations } from '../translations/i18n';
 import { EthiopicPattern } from './EthiopicPattern';
+import { localImages, handleImgError } from '../assets/images';
 
 interface HeroProps {
   currentLang: Language;
@@ -11,28 +12,33 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ currentLang }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [clearBg, setClearBg] = useState(false);
 
   const t = (key: string) => translations[currentLang][key] || key;
 
   // Background slides showcasing actual hospital exterior & modern facilities
   const slides = [
     {
-      url: '/images/ambo_general_hospital.jpg',
+      url: localImages.amboHospitalMain,
+      fallbackType: 'main',
       title: 'Ambo General Hospital Main Campus',
       subtitle: 'Modern Healthcare Center in West Shewa'
     },
     {
-      url: '/images/ambo_general_hospital_building.jpg',
+      url: localImages.amboHospitalBuilding,
+      fallbackType: 'building',
       title: 'New Multi-Story Surgical & Inpatient Building',
       subtitle: '350+ Beds & 12 Intensive Care Units'
     },
     {
-      url: '/images/ib_tech_stem.jpg',
+      url: localImages.ibTechStem,
+      fallbackType: 'stem',
       title: 'IB Tech Startup & STEM Center Digital Transformation',
       subtitle: 'Smart Electronic Health Records & Telemedicine'
     },
     {
-      url: 'https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=2000&q=80',
+      url: localImages.amboHospitalBuilding,
+      fallbackType: 'building',
       title: '24/7 Advanced Emergency & Surgical Operating Suites',
       subtitle: 'Board-Certified Ethiopian Surgeons & Specialists'
     }
@@ -61,12 +67,20 @@ export const Hero: React.FC<HeroProps> = ({ currentLang }) => {
           <img
             src={slide.url}
             alt={slide.title}
-            referrerPolicy="no-referrer"
+            onError={(e) => handleImgError(e, slide.fallbackType)}
             className="w-full h-full object-cover object-center filter brightness-90"
           />
           {/* Multi-layered Frosted Dark Blue & Emerald Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2545]/90 via-[#0B2545]/75 to-[#059669]/50 backdrop-blur-[2px]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#0B2545]/40 to-[#0B2545]/90" />
+          <div
+            className={`absolute inset-0 bg-gradient-to-r from-[#0B2545]/90 via-[#0B2545]/75 to-[#059669]/50 backdrop-blur-[2px] transition-opacity duration-500 ${
+              clearBg ? 'opacity-30' : 'opacity-100'
+            }`}
+          />
+          <div
+            className={`absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-[#0B2545]/40 to-[#0B2545]/90 transition-opacity duration-500 ${
+              clearBg ? 'opacity-20' : 'opacity-100'
+            }`}
+          />
         </div>
       ))}
 
@@ -179,13 +193,27 @@ export const Hero: React.FC<HeroProps> = ({ currentLang }) => {
                   </h3>
                   <p className="text-xs text-slate-300 mt-0.5">Ambo General Hospital Statistics</p>
                 </div>
-                <button
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  className="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 transition-colors"
-                  aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
-                >
-                  {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                </button>
+                <div className="flex items-center space-x-2">
+                  <button
+                    onClick={() => setClearBg(!clearBg)}
+                    className={`p-2 rounded-xl transition-colors flex items-center space-x-1 text-xs font-semibold ${
+                      clearBg
+                        ? 'bg-amber-400 text-slate-900 font-bold'
+                        : 'bg-white/10 hover:bg-white/20 text-slate-200'
+                    }`}
+                    title={clearBg ? 'Switch to Glass Overlay' : 'View Full Crisp Background Photo'}
+                  >
+                    {clearBg ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    <span className="hidden sm:inline">{clearBg ? 'Glass Overlay' : 'Clear Photo'}</span>
+                  </button>
+                  <button
+                    onClick={() => setIsPlaying(!isPlaying)}
+                    className="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-slate-200 transition-colors"
+                    aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
+                  >
+                    {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+                  </button>
+                </div>
               </div>
 
               {/* Stats Grid */}

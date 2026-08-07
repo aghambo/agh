@@ -3,6 +3,7 @@ import { Target, Eye, HeartHandshake, History, Award, CheckCircle2, Quote, Build
 import { Language } from '../types';
 import { translations } from '../translations/i18n';
 import { EthiopicPattern } from './EthiopicPattern';
+import { localImages, handleImgError } from '../assets/images';
 
 interface AboutProps {
   currentLang: Language;
@@ -164,9 +165,9 @@ export const AboutSection: React.FC<AboutProps> = ({ currentLang }) => {
             <div className="lg:col-span-4 flex justify-center">
               <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-3xl overflow-hidden border-4 border-white shadow-2xl group">
                 <img
-                  src="/images/director_of_ambo_general_hospital.jpg"
+                  src={localImages.directorTokumaBayisa}
                   alt={t('about.directorName')}
-                  referrerPolicy="no-referrer"
+                  onError={(e) => handleImgError(e, 'director')}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B2545]/80 via-transparent to-transparent opacity-80" />

@@ -4,6 +4,7 @@ import { Language } from '../types';
 import { translations } from '../translations/i18n';
 import { testimonialsData } from '../data/hospitalData';
 import { EthiopicPattern } from './EthiopicPattern';
+import { handleImgError } from '../assets/images';
 
 interface TestimonialsProps {
   currentLang: Language;
@@ -54,12 +55,18 @@ export const TestimonialsSection: React.FC<TestimonialsProps> = ({ currentLang }
               </div>
 
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center space-x-3">
-                <img
-                  src={item.avatar}
-                  alt={item.name}
-                  referrerPolicy="no-referrer"
-                  className="w-11 h-11 rounded-full object-cover border-2 border-emerald-500"
-                />
+                {item.avatar ? (
+                  <img
+                    src={item.avatar}
+                    alt={item.name}
+                    onError={(e) => handleImgError(e, 'main')}
+                    className="w-11 h-11 rounded-full object-cover border-2 border-emerald-500"
+                  />
+                ) : (
+                  <div className="w-11 h-11 rounded-full bg-[#0B2545]/10 border-2 border-emerald-500 flex items-center justify-center text-[#0B2545] shadow-inner">
+                    <User className="w-5 h-5 text-[#0B2545]/80" />
+                  </div>
+                )}
                 <div>
                   <h4 className="text-sm font-bold text-slate-900">{item.name}</h4>
                   <p className="text-xs text-slate-500">{t(item.roleKey)} • {t(item.locationKey)}</p>

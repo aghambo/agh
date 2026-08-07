@@ -4,6 +4,7 @@ import { Language, ServiceItem } from '../types';
 import { translations } from '../translations/i18n';
 import { servicesData } from '../data/hospitalData';
 import { EthiopicPattern } from './EthiopicPattern';
+import { handleImgError } from '../assets/images';
 
 interface ServicesSectionProps {
   currentLang: Language;
@@ -109,7 +110,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ currentLang })
                 <img
                   src={service.image}
                   alt={t(service.titleKey)}
-                  referrerPolicy="no-referrer"
+                  onError={(e) => handleImgError(e, 'main')}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B2545]/80 via-transparent to-transparent" />
@@ -175,7 +176,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ currentLang })
               <img
                 src={activeModalService.image}
                 alt={t(activeModalService.titleKey)}
-                referrerPolicy="no-referrer"
+                onError={(e) => handleImgError(e, 'main')}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B2545] via-[#0B2545]/50 to-transparent" />

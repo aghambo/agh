@@ -4,6 +4,7 @@ import { Language, NewsArticle } from '../types';
 import { translations } from '../translations/i18n';
 import { newsArticles } from '../data/hospitalData';
 import { EthiopicPattern } from './EthiopicPattern';
+import { handleImgError } from '../assets/images';
 
 interface BlogProps {
   currentLang: Language;
@@ -77,7 +78,7 @@ export const BlogSection: React.FC<BlogProps> = ({ currentLang }) => {
                 <img
                   src={article.image}
                   alt={article.titleKey}
-                  referrerPolicy="no-referrer"
+                  onError={(e) => handleImgError(e, 'main')}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
@@ -136,7 +137,7 @@ export const BlogSection: React.FC<BlogProps> = ({ currentLang }) => {
               <img
                 src={activeArticle.image}
                 alt={activeArticle.titleKey}
-                referrerPolicy="no-referrer"
+                onError={(e) => handleImgError(e, 'main')}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B2545] via-[#0B2545]/40 to-transparent" />

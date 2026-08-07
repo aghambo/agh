@@ -4,6 +4,7 @@ import { Language } from '../types';
 import { translations } from '../translations/i18n';
 import { achievementsData } from '../data/hospitalData';
 import { EthiopicPattern } from './EthiopicPattern';
+import { handleImgError } from '../assets/images';
 
 interface AchievementsProps {
   currentLang: Language;
@@ -62,7 +63,7 @@ export const AchievementsSection: React.FC<AchievementsProps> = ({ currentLang }
                           <img
                             src={item.image}
                             alt={t(item.titleKey)}
-                            referrerPolicy="no-referrer"
+                            onError={(e) => handleImgError(e, 'building')}
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />

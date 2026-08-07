@@ -3,6 +3,7 @@ import { Cpu, GraduationCap, ShieldCheck, Zap, Laptop, Award, ExternalLink } fro
 import { Language } from '../types';
 import { translations } from '../translations/i18n';
 import { EthiopicPattern } from './EthiopicPattern';
+import { localImages, handleImgError } from '../assets/images';
 
 interface StemInterventionBannerProps {
   currentLang: Language;
@@ -101,9 +102,9 @@ export const StemInterventionBanner: React.FC<StemInterventionBannerProps> = ({ 
             <div className="lg:col-span-5">
               <div className="relative rounded-2xl overflow-hidden border-2 border-emerald-500/30 shadow-2xl group">
                 <img
-                  src="/images/ib_tech_stem.jpg"
+                  src={localImages.ibTechStem}
                   alt="IB Tech & STEM Innovation Lab at Ambo General Hospital"
-                  referrerPolicy="no-referrer"
+                  onError={(e) => handleImgError(e, 'stem')}
                   className="w-full h-56 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent" />
