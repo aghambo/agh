@@ -163,16 +163,18 @@ export const AboutSection: React.FC<AboutProps> = ({ currentLang }) => {
         <div className="mt-16 glass-panel rounded-3xl p-8 sm:p-12 border border-slate-200/80 shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-4 flex justify-center">
-              <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-3xl overflow-hidden border-4 border-white shadow-2xl group">
+              <div className="relative w-60 h-60 sm:w-72 sm:h-72 rounded-3xl overflow-hidden border-4 border-emerald-600/30 shadow-2xl group bg-slate-900">
                 <img
                   src={localImages.directorTokumaBayisa}
                   alt={t('about.directorName')}
                   onError={(e) => handleImgError(e, 'director')}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B2545]/80 via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#0B2545]/90 via-[#0B2545]/40 to-transparent" />
                 <div className="absolute bottom-3 left-3 right-3 text-white text-center">
-                  <span className="text-xs font-bold bg-emerald-500 px-2.5 py-0.5 rounded-full">Medical Director</span>
+                  <span className="text-xs font-bold bg-emerald-600 text-white px-3 py-1 rounded-full shadow-md">
+                    Medical Director
+                  </span>
                 </div>
               </div>
             </div>

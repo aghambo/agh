@@ -3,7 +3,7 @@ import React from 'react';
 // Export bundled static image assets from src/components/images/
 import amboHospitalMain from './images/ambo_general_hospital.jpg';
 import amboHospitalBuilding from './images/ambo_general_hospital_building.jpg';
-import directorTokumaBayisa from './images/director_of_ambo_general_hospital.jpg';
+import directorTokumaBayisa from './images/dr_tokuma_bayisa_1786085718182.jpg';
 import ibTechStem from './images/ib_tech_stem.jpg';
 
 export const localImages = {
